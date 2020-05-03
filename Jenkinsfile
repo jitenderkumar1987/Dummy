@@ -2,25 +2,33 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            echo 'Welcome'
-          }
-        }
+      steps {
+        echo 'Welcome'
+      }
+    }
 
-        stage('Step 1') {
-          steps {
-            echo 'Lets learn Jenkins'
-          }
-        }
+    stage('Test') {
+      steps {
+        echo 'Run unit tests'
+      }
+    }
 
+    stage('Buzz Regression Tests') {
+      steps {
+        echo 'Buzz Regression Tests'
+        echo 'Publish XML tests to JUnit'
+      }
+    }
+
+    stage('Buzz Deploy') {
+      steps {
+        echo 'Deploy to staging server'
       }
     }
 
     stage('End') {
       steps {
-        echo 'Thanks'
+        echo 'end'
       }
     }
 
