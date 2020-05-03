@@ -7,6 +7,12 @@ pipeline {
       }
     }
 
+    stage('Test1') {
+      steps {
+        echo 'Run unit tests'
+      }
+    }
+
     stage('Test') {
       steps {
         echo 'Run unit tests'
